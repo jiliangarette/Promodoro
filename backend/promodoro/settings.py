@@ -1,6 +1,11 @@
-
-
 from pathlib import Path
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -57,11 +62,11 @@ WSGI_APPLICATION = 'promodoro.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'your_database_name',  # Found in AWS RDS
-        'USER': 'your_db_username',  # The username you set in RDS
-        'PASSWORD': 'your_db_password',  # The password you set in RDS
-        'HOST': 'your-db-instance.rds.amazonaws.com',  # Your RDS endpoint
-        'PORT': '5432',  # Default PostgreSQL port
+        'NAME': 'promodoro',
+        'USER': 'Jgarette0',
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': 'promodoro.cti26uqc8nx6.ap-southeast-2.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
