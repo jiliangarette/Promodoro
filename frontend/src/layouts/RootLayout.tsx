@@ -8,7 +8,7 @@ interface RootLayoutProps {
 
 const RootLayout: FC<RootLayoutProps> = ({ children }) => {
   return (
-    <div className="fixed h-screen flex flex-col justify-between">
+    <div className="fixed h-screen w-screen">
       <Navbar />
       <main>{children}</main>
       <Footer />
