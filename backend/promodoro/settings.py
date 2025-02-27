@@ -26,10 +26,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'tasks'
+    'tasks',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -105,3 +107,13 @@ STATIC_URL = 'static/'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# CORS settings
+CORS_ALLOW_ALL_ORIGINS = True  # Only for development! Change this in production
+
+# For production, specify allowed origins:
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",  # React default port
+#     "http://localhost:5173",  # Vite default port
+#     "http://your-production-domain.com",
+# ]
