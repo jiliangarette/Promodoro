@@ -4,6 +4,10 @@
 
 `python`, `django`, `postgresql`, `AWS (RDS, EC2)`
 
+## Frontend Tech Stack
+
+`react`, `typescript`, `vite`, `tailwindcss`
+
 ## API Endpoints
 
 | Method | Endpoint          | Description      |
