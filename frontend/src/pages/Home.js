@@ -54,7 +54,7 @@ import FeedbackMessage from "@/components/FeedbackMessage";
 import TaskList from "@/components/TaskList";
 import TaskForm from "@/components/TaskForm";
 import FormatTime from "@/components/FormatTime";
-var API_BASE_URL = "http://13.54.72.51:8000/";
+var API_BASE_URL = "http://13.54.72.51:8000";
 var Home = function () {
     // State declarations
     var _a = useState("pomodoro"), mode = _a[0], setMode = _a[1];

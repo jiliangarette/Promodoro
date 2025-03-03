@@ -7,7 +7,7 @@ import TaskList from "@/components/TaskList";
 import TaskForm from "@/components/TaskForm";
 import FormatTime from "@/components/FormatTime";
 
-const API_BASE_URL = "http://13.54.72.51:8000/";
+const API_BASE_URL = "https://promodoro-1.onrender.com/";
 
 const Home = () => {
   // State declarations
