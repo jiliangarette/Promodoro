@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@pqina/flip": "^1.8.4",
+    "@rumess/react-flip-countdown": "^1.2.6",
     "@tailwindcss/vite": "^4.0.9",
     "lucide-react": "^0.476.0",
     "path": "^0.12.7",
