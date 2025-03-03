@@ -1,0 +1,26 @@
+{
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/index.html",
+        "status": 200
+      }
+    ],
+    "build": {
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "headers": [
+      {
+        "source": "/(.*).(js|css|png|jpg|jpeg|gif|svg|woff|woff2|ttf|otf|eot|mp4|webm|ogg|mp3|wav|flac|aac|json|ico)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      }
+    ]
+  }
+  
