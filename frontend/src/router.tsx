@@ -1,14 +1,24 @@
-import { FC } from "react";
+import { FC, Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "@/pages/Home";
-import About from "@/pages/About";
+import { Spinner } from "./components/Spinner";
+
+const Home = lazy(() => import("@/pages/Home"));
+const About = lazy(() => import("@/pages/About"));
+const Blog = lazy(() => import("./pages/Blog"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+const Test = lazy(() => import("./mock/Test"));
 
 const AppRouter: FC = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-    </Routes>
+    <Suspense fallback={<Spinner />}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/test" element={<Test />} />
+      </Routes>
+    </Suspense>
   );
 };
 

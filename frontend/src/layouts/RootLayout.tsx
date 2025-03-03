@@ -1,5 +1,4 @@
 import { FC, ReactNode } from "react";
-import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 interface RootLayoutProps {
@@ -8,10 +7,9 @@ interface RootLayoutProps {
 
 const RootLayout: FC<RootLayoutProps> = ({ children }) => {
   return (
-    <div className="fixed h-screen w-screen">
+    <div className=" overflow-x-hidden">
       <Navbar />
       <main>{children}</main>
-      <Footer />
     </div>
   );
 };
