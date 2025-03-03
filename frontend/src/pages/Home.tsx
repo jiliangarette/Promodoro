@@ -7,7 +7,7 @@ import FeedbackMessage from "@/components/FeedbackMessage";
 import TaskList from "@/components/TaskList";
 import TaskForm from "@/components/TaskForm";
 
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = "http://13.54.72.51:8000/";
 
 const Home = () => {
   // State declarations
