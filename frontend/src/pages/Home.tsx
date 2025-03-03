@@ -7,7 +7,7 @@ import FeedbackMessage from "@/components/FeedbackMessage";
 import TaskList from "@/components/TaskList";
 import TaskForm from "@/components/TaskForm";
 
-const API_BASE_URL = "http://localhost:8000"; // For local development
+const API_BASE_URL = "http://localhost:8000";
 
 const Home = () => {
   // State declarations
@@ -57,9 +57,7 @@ const Home = () => {
     }
   }, [feedback]);
 
-  // NEW: Update timer when currentTask or mode changes
   useEffect(() => {
-    // Stop the timer when a new task or mode is selected
     setIsActive(false);
     if (mode === "pomodoro") {
       setTimeLeft(currentTask?.pomodoro_duration * 60 || 25 * 60);
@@ -70,7 +68,6 @@ const Home = () => {
     }
   }, [currentTask, mode]);
 
-  // API: Fetch tasks from server
   const fetchTasks = async () => {
     setIsLoading(true);
     try {
@@ -98,7 +95,6 @@ const Home = () => {
     }
   };
 
-  // API: Create a new task
   const createTask = async (taskData) => {
     setIsSubmitting(true);
     try {
@@ -186,10 +182,8 @@ const Home = () => {
     }
   };
 
-  // When a task is selected, update currentTask and switch to pomodoro mode.
   const selectTask = (task) => {
     setCurrentTask(task);
-    // Do not call resetTimer here; let the useEffect handle it.
     switchMode("pomodoro");
   };
 
@@ -199,7 +193,6 @@ const Home = () => {
     setIsFormVisible(true);
   };
 
-  // Reset timer manually (if needed)
   const resetTimer = () => {
     setIsActive(false);
     if (mode === "pomodoro") {
@@ -211,7 +204,6 @@ const Home = () => {
     }
   };
 
-  // Switch between modes (Pomodoro, Short Break, Long Break)
   const switchMode = (newMode) => {
     setMode(newMode);
     setIsActive(false);
@@ -230,7 +222,6 @@ const Home = () => {
     }
   };
 
-  // Toggle the timer's active state (start/pause)
   const toggleTimer = () => {
     if (isActive) {
       setIsActive(false);
@@ -245,7 +236,6 @@ const Home = () => {
     }
   };
 
-  // Handle what happens when the timer reaches zero.
   const handleTimerComplete = () => {
     if (mode === "pomodoro" && currentTask) {
       const updatedPomodoros = (currentTask.pomodoros_completed || 0) + 1;
@@ -261,7 +251,6 @@ const Home = () => {
     }
   };
 
-  // Handle task form submission (create or update)
   const handleFormSubmit = (formData) => {
     if (editingTask) {
       updateTask(editingTask.id, formData);
@@ -276,7 +265,6 @@ const Home = () => {
     setIsFormVisible(false);
   };
 
-  // Handle task form cancellation
   const handleFormCancel = () => {
     setIsFormVisible(false);
     setEditingTask(null);
