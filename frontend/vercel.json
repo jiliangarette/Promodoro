@@ -7,9 +7,10 @@
       }
     ],
     "build": {
-      "env": {
-        "NODE_ENV": "production"
-      }
+    "env": {
+        "NODE_ENV": "production",
+        "NPM_FLAGS": "--legacy-peer-deps"
+        }
     },
     "headers": [
       {
