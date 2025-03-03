@@ -1,16 +1,9 @@
 {
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/index.html",
-        "status": 200
-      }
-    ],
     "build": {
-    "env": {
+      "env": {
         "NODE_ENV": "production",
         "NPM_FLAGS": "--legacy-peer-deps"
-        }
+      }
     },
     "headers": [
       {
