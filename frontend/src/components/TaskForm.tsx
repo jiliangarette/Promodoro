@@ -94,7 +94,7 @@ const TaskForm = ({ onSubmit, onCancel, initialData, isSubmitting }) => {
                     setFormErrors(newErrors);
                   }
                 }}
-                className={`w-full p-4 pl-12 border-2 ${
+                className={`w-full p-4  border-2 ${
                   formErrors.title
                     ? "border-red-400 focus:ring-red-200"
                     : "border-gray-200 focus:border-[#0e0e0e] focus:ring-gray-100"
@@ -125,7 +125,7 @@ const TaskForm = ({ onSubmit, onCancel, initialData, isSubmitting }) => {
                   onChange={(e) =>
                     setPomodoroDuration(parseInt(e.target.value))
                   }
-                  className="w-full p-4 pl-12 border-2 border-gray-200 rounded-xl bg-white text-gray-800 focus:border-[#0e0e0e] focus:ring-4 focus:ring-gray-100 focus:outline-none transition-all duration-200 text-base"
+                  className="w-full p-4  border-2 border-gray-200 rounded-xl bg-white text-gray-800 focus:border-[#0e0e0e] focus:ring-4 focus:ring-gray-100 focus:outline-none transition-all duration-200 text-base"
                 />
               </div>
             </div>

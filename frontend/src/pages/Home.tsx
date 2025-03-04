@@ -7,7 +7,7 @@ import TaskList from "@/components/TaskList";
 import TaskForm from "@/components/TaskForm";
 import FormatTime from "@/components/FormatTime";
 
-const API_BASE_URL = "https://promodoro-1.onrender.com/";
+const API_BASE_URL = "http://127.0.0.1:8000";
 
 const Home = () => {
   // State declarations
@@ -272,29 +272,31 @@ const Home = () => {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-start p-4">
-      <div className="flex gap-4 mb-8">
-        <Button
-          className="px-4 py-2 rounded"
-          variant={mode === "pomodoro" ? "primary" : "ghost"}
-          onClick={() => switchMode("pomodoro")}
-        >
-          Pomodoro
-        </Button>
-        <Button
-          className="px-4 py-2 rounded"
-          variant={mode === "shortBreak" ? "primary" : "ghost"}
-          onClick={() => switchMode("shortBreak")}
-        >
-          Short Break
-        </Button>
-        <Button
-          className="px-4 py-2 rounded"
-          variant={mode === "longBreak" ? "primary" : "ghost"}
-          onClick={() => switchMode("longBreak")}
-        >
-          Long Break
-        </Button>
-      </div>
+      {!isActive && (
+        <div className="flex gap-4 mb-8 z-50">
+          <Button
+            className="px-4 py-2 rounded"
+            variant={mode === "pomodoro" ? "primary" : "ghost"}
+            onClick={() => switchMode("pomodoro")}
+          >
+            Pomodoro
+          </Button>
+          <Button
+            className="px-4 py-2 rounded"
+            variant={mode === "shortBreak" ? "primary" : "ghost"}
+            onClick={() => switchMode("shortBreak")}
+          >
+            Short Break
+          </Button>
+          <Button
+            className="px-4 py-2 rounded"
+            variant={mode === "longBreak" ? "primary" : "ghost"}
+            onClick={() => switchMode("longBreak")}
+          >
+            Long Break
+          </Button>
+        </div>
+      )}
 
       <div className="w-full px-4 font-semibold max-w-[1100px]">
         <h2 className="text-2xl mb-4">
@@ -303,8 +305,8 @@ const Home = () => {
               ? currentTask.title
               : ""
             : mode === "shortBreak"
-            ? "Short Break"
-            : "Long Break"}
+            ? ""
+            : ""}
         </h2>
       </div>
 
