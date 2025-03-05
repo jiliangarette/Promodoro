@@ -29,7 +29,7 @@ const variantStyles: Record<ButtonVariant, string> = {
     "border-2 border-slate-300 text-slate-700 hover:bg-slate-50 focus:ring-slate-600",
   ghost: "text-slate-700 hover:bg-slate-100 focus:ring-slate-600",
   destructive: "bg-red-600 text-white hover:bg-red-700 focus:ring-red-600",
-  link: "text-slate-800 hover:underline p-0 height-auto",
+  link: "text-[#0e0e0e] hover:underline p-0 height-auto",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {

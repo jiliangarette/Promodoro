@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ListPlus, Loader2 } from "lucide-react";
+import { Coffee, ListPlus, Loader2, Moon, Timer } from "lucide-react";
 import { Button } from "@/components/Button";
 import TimerButtons from "@/components/TimerButtons";
 import FeedbackMessage from "@/components/FeedbackMessage";
@@ -10,7 +10,6 @@ import FormatTime from "@/components/FormatTime";
 const API_BASE_URL = "https://cool-promodoro.onrender.com";
 
 const Home = () => {
-  // State declarations
   const [mode, setMode] = useState("pomodoro");
   const [timeLeft, setTimeLeft] = useState(25 * 60);
   const [isActive, setIsActive] = useState(false);
@@ -273,29 +272,64 @@ const Home = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-start p-4">
       {!isActive && (
-        <div className="flex gap-4 mb-8 z-50">
-          <Button
-            className="px-4 py-2 rounded"
-            variant={mode === "pomodoro" ? "primary" : "ghost"}
-            onClick={() => switchMode("pomodoro")}
-          >
-            Pomodoro
-          </Button>
-          <Button
-            className="px-4 py-2 rounded"
-            variant={mode === "shortBreak" ? "primary" : "ghost"}
-            onClick={() => switchMode("shortBreak")}
-          >
-            Short Break
-          </Button>
-          <Button
-            className="px-4 py-2 rounded"
-            variant={mode === "longBreak" ? "primary" : "ghost"}
-            onClick={() => switchMode("longBreak")}
-          >
-            Long Break
-          </Button>
-        </div>
+        <>
+          <div className="hidden sm:flex gap-4 mb-8 z-50">
+            <Button
+              className="px-4 py-2 rounded"
+              variant={mode === "pomodoro" ? "primary" : "ghost"}
+              onClick={() => switchMode("pomodoro")}
+            >
+              Pomodoro
+            </Button>
+            <Button
+              className="px-4 py-2 rounded"
+              variant={mode === "shortBreak" ? "primary" : "ghost"}
+              onClick={() => switchMode("shortBreak")}
+            >
+              Short Break
+            </Button>
+            <Button
+              className="px-4 py-2 rounded"
+              variant={mode === "longBreak" ? "primary" : "ghost"}
+              onClick={() => switchMode("longBreak")}
+            >
+              Long Break
+            </Button>
+          </div>
+
+          <div className="flex sm:hidden fixed bottom-2 right-4 z-50 flex-col gap-2">
+            <Button
+              className="w-12 h-12 rounded-[12px] relative flex flex-col items-center justify-center"
+              variant={mode === "pomodoro" ? "primary" : "ghost"}
+              onClick={() => switchMode("pomodoro")}
+            >
+              <Timer size={24} />
+              <span className="text-xs  rounded-full absolute top-1 right-1">
+                25
+              </span>
+            </Button>
+            <Button
+              className="w-12 h-12 rounded-[12px] relative flex flex-col items-center justify-center"
+              variant={mode === "shortBreak" ? "primary" : "ghost"}
+              onClick={() => switchMode("shortBreak")}
+            >
+              <Coffee size={24} />
+              <span className="text-xs  rounded-full absolute top-1 right-1">
+                5
+              </span>
+            </Button>
+            <Button
+              className="w-12 h-12 rounded-[12px] relative flex flex-col items-center justify-center"
+              variant={mode === "longBreak" ? "primary" : "ghost"}
+              onClick={() => switchMode("longBreak")}
+            >
+              <Moon size={24} />
+              <span className="text-xs  rounded-full absolute top-1 right-1">
+                15
+              </span>
+            </Button>
+          </div>
+        </>
       )}
 
       <div className="w-full px-4 font-semibold max-w-[1100px]">
@@ -346,7 +380,7 @@ const Home = () => {
 
         {isLoading ? (
           <div className="flex flex-col items-center justify-center py-8">
-            <Loader2 className="animate-spin text-blue-500" size={28} />
+            <Loader2 className="animate-spin text-slate-500" size={20} />
             <p className="mt-2 text-sm text-slate-500 ">
               Loading your tasks...
             </p>

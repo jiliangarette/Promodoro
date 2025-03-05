@@ -119,13 +119,15 @@ const TaskList = ({
             </div>
           </div>
 
-          <div className="mt-4 ml-10">
+          <div className="mt-4 ml-4 sm:ml-10">
             <div className="flex items-center text-base text-gray-600">
-              <span className="mr-3">
-                {task.pomodoro_duration} minutes focus time
-              </span>
+              <span className="mr-3">{task.pomodoro_duration} min focus</span>
               <span className="mx-3">•</span>
-              <span>{task.pomodoros_completed} sessions completed</span>
+              <span>
+                {task.pomodoros_completed > 1
+                  ? "Done"
+                  : `${task.pomodoros_completed} session`}
+              </span>
             </div>
           </div>
 

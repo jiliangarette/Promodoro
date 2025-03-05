@@ -3,7 +3,7 @@ import { Button } from "./Button";
 
 const TimerButtons = ({ isActive, toggleTimer, resetTimer, children }) => {
   return (
-    <div className="flex  fixed  left-4 flex-col gap-2 top-1/2 z-20">
+    <div className="flex  fixed left-4 sm:flex-col gap-2 bottom-2 sm:top-1/2 z-20">
       <Button
         size="icon"
         className="   cursor-pointer  "
