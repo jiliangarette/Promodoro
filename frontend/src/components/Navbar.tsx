@@ -46,7 +46,7 @@ const Navbar = () => {
             className="px-4 py-2 hover:bg-slate-100 w-full text-center"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            Blog
+            Study
           </Link>
         </div>
       )}
