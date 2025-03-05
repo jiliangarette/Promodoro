@@ -113,8 +113,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True  # Only for development! Change this in production
 
 # For production, specify allowed origins:
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",  # React default port
-#     "http://localhost:5173",  # Vite default port
-#     "http://your-production-domain.com",
-# ]
+
+MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    ...
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://cool-promodoro.vercel.app",
+]
