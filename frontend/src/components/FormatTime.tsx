@@ -4,7 +4,7 @@ const FormatTime = ({ seconds, isActive }) => {
 
   return (
     <div
-      className={`flex items-center timer justify-center gap-4 select-none pt-12 sm:pt-0 sm:gap-8 inset-0 ${
+      className={`flex items-center timer justify-center gap-4 select-none  sm:pt-0 sm:gap-8 inset-0 ${
         isActive && "fixed bg-black"
       }`}
     >

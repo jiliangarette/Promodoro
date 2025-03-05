@@ -331,7 +331,7 @@ const Home = () => {
           </div>
         </>
       )}
-
+      <div className="h-12 sm:h-0"></div>
       <div className="w-full px-4 font-semibold max-w-[1100px]">
         <h2 className="text-2xl mb-4">
           {mode === "pomodoro"
