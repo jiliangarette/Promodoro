@@ -10,7 +10,7 @@ const Navbar = () => {
     <div className="fixed top-0 left-0 w-full z-50 sm:z-0">
       <nav className="transition-all duration-300 ease-in-out  h-16 flex items-center justify-between px-4 ">
         <Link to="/" className="hover:opacity-75 font-display ">
-          cool promodoro
+          promodoro
         </Link>
 
         <div className="hidden md:flex md:space-x-6">
@@ -18,7 +18,7 @@ const Navbar = () => {
             <Button variant="link">About</Button>
           </Link>
           <Link to="/blog">
-            <Button variant="link">Blog</Button>
+            <Button variant="link">Study</Button>
           </Link>
         </div>
 
